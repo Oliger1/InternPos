@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSite</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Home</a>
+         <div class="search-container">
+            <form action="/search" method="GET">
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <a href="#">Community</a>
+        <a href="#">Account</a>
+        <a href="#">Card</a>
+    </div>
+    <div class="content">
+        <p>Body Jewelry | Piercing | Tattoo | Medical | Studio | Permanent Makeup</p>
+    </div>
+    <div class="ads-container">
+        <div class="ads">
+            <img src="Images/images.jpg" alt="Ad 1">
+            <img src="Images/images.jpg" alt="Ad 2">
+            <img src="Images/download.jpg" alt="Ad 3">
+        </div>
+    </div>
+
+    <div class="content1">
+        <h1>Body Jewelry</h1>
+        <p>Piercing | Tattoo | Medical | Studio | Permanent Makeup</p>
+        <div class="ads">
+            <div class="ad">
+                <img src="Images/download.jpg" alt="Ad 1">
+                <div class="ad-content">
+                    <p>Body Jewelry</p>
+                    <a href="#" class="btn">Shop Now</a>
+                </div>
+            </div>
+            <div class="ad">
+                <img src="Images/download.jpg" alt="Ad 2">
+                <div class="ad-content">
+                    <p>Piercing</p>
+                    <a href="#" class="btn">Shop Now</a>
+                </div>
+            </div>
+            <div class="ad">
+                <img src="Images/download.jpg" alt="Ad 3">
+                <div class="ad-content">
+                    <p>Tattoo</p>
+                    <a href="#" class="btn">Shop Now</a>
+                </div>
+            </div>
+                 <div class="ad">
+                <img src="Images/download.jpg" alt="Ad 3">
+                <div class="ad-content">
+                    <p>Tattoo</p>
+                    <a href="#" class="btn">Shop Now</a>
+                </div>
+        </div>
+    </div>
+    <p><h2>Community</h2></p>
+    <div class="Community">
+        <img src="Images/edhuuyg.jpeg" alt="Community 1">
+        <p>Meet with person 1</p>
+    </div>
+    <div class="Community">
+        <img src="Images/edfrgt.jpeg" alt="Community 2">
+        <p>Meet with person 2</p>
+    </div>
+    <div class="Community">
+        <img src="Images/3rt4yu.jpeg" alt="Community 3">
+        <p>Meet with person 3</p>
+    </div>
+
+    <p>Carousel</p>
+
+    <div class="Carousel-nav">
+        <button class="prev">Previous</button>
+        <button class="next">Next</button>
+      </div>
+      <div class="Carousel-container">
+        <div class="Carousel">
+          <img src="Images/download.jpg" alt="Carousel 1">
+          <p>This is the first product</p>
+        </div>
+        <div class="Carousel">
+          <img src="Images/download.jpg" alt="Carousel 1">
+          <p>This is the second product</p>
+        </div>
+        <div class="Carousel">
+          <img src="Images/download.jpg" alt="Carousel 1">
+          <p>This is the third product</p>
+        </div>
+        <div class="Carousel">
+          <img src="Images/download.jpg" alt="Carousel 1">
+          <p>This is the fourth product</p>
+        </div>
+      </div>
+      <div class="review">
+        <img src="path/to/reviewer/image.jpg" alt="Reviewer image">
+        <div class="review-content">
+          <h3>Reviewer Name</h3>
+          <p>Reviewer Title or Position</p>
+          <p>Review text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        </div>
+      </div>
+<script>
+    const carousels = document.querySelectorAll('.Carousel');
+let currentCarousel = 0;
+
+function goToCarousel(n) {
+  carousels.forEach((carousel, i) => {
+    if (i < 3) {
+      carousel.style.transform = `translateX(${100 * (i - n)}%)`;
+    } else {
+      carousel.style.transform = `translateX(${100 * (i - n + 3)}%)`;
+    }
+  });
+  currentCarousel = n;
+}
+
+goToCarousel(0);
+
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+
+prev.addEventListener('click', () => {
+  if (currentCarousel > 0) {
+    goToCarousel(currentCarousel - 1);
+  } else {
+    goToCarousel(carousels.length - 3);
+  }
+});
+
+next.addEventListener('click', () => {
+  if (currentCarousel < carousels.length - 3) {
+    goToCarousel(currentCarousel + 1);
+  } else {
+    goToCarousel(0);
+  }
+});
+</script>
+</body>
+</html>
